@@ -1,0 +1,63 @@
+/* Añade esto a tu tienda.css */
+.banner-destacado {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: var(--borde-radio);
+  position: relative;
+  overflow: hidden;
+  height: 120px; /* Más delgado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.banner-destacado::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, 
+    #6a0dad, 
+    #b83280, 
+    #e63946, 
+    #ffd166);
+  background-size: 300% 300%;
+  animation: gradientBG 8s ease infinite;
+  z-index: -1;
+}
+
+.banner-destacado::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.banner-destacado h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  color: white; /* Asegura que el color del título sea blanco */
+}
+
+.banner-destacado .boton-banner {
+  background: white;
+  color: var(--color-primario);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.banner-destacado .boton-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}

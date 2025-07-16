@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora IMC - Sports & Defense</title>
+  <link rel="stylesheet" href="../css/styles.css"> <!-- Estilos base, header, footer -->
+  <link rel="stylesheet" href="../css/search.css"> <!-- Estilos para la barra de búsqueda -->
+  <link rel="stylesheet" href="../css/animations.css"> <!-- ESTILOS PARA ANIMACIONES GLOBALES -->
+  <link rel="stylesheet" href="../css/utilidades.css"> <!-- Clases para botones y tablas -->
+  <link rel="stylesheet" href="../css/responsive.css"> <!-- Media queries -->
+  <link rel="stylesheet" href="../css/imc.css"> <!-- CSS específico para IMC -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="grid-container">
+
+  <header class="header fixed-top">
+    <div class="container">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <span class="hamburger"></span>
+      </button>
+      <div class="brand-container">
+        <img class="logo" src="../imagenes/logo.png" alt="Sports & Defense Logo" />
+        <h1>Sports &amp; Defense</h1>
+      </div>
+      <nav class="menu" id="menu">
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="academias.html">Academias</a></li>
+          <li><a href="articulos.html">Artículos</a></li>
+          <li><a href="defensa-personal.html">Defensa Personal</a></li>
+          <li><a href="contactos.html">Contacto</a></li>
+          <li><a href="imc.html">Calculadora IMC</a></li>
+          <li class="login-item"><a href="login.html" class="boton-login">Iniciar Sesión</a></li>
+        </ul>
+      </nav>
+      <div class="search-wrapper">
+        <a href="#search-container" class="search-toggle-btn" id="search-toggle-btn" aria-label="Abrir buscador">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="search-container" id="search-container">
+    <a href="#" class="close-search" id="close-search" aria-label="Cerrar buscador">&times;</a>
+    <form class="search-form" id="search-form">
+      <input class="search-input" id="searchInput" placeholder="Buscar en el sitio...">
+      <button class="search-button" type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+        </svg>
+      </button>
+    </form>
+  </div>
+  <!-- Cuerpo Principal -->
+  <main class="main">
+    <h1>Calculadora de Índice de Masa Corporal (IMC)</h1>
+
+    <div class="mx-auto"><h2 class="gradiente"><b>Controla tu salud y estado físico</b></h2></div>
+
+    <!-- Sección de cálculo -->
+    <div class="form-grupo">
+      <div class="imc-calculadora">
+        <div class="imc-form">
+          <div class="form-group">
+            <label for="altura">Altura (cm)</label>
+            <input type="number" id="altura" min="100" max="250" placeholder="Ej: 175">
+          </div>
+          <div class="form-group">
+            <label for="peso">Peso (kg)</label>
+            <input type="number" id="peso" min="30" max="300" placeholder="Ej: 70">
+          </div>
+          <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" min="12" max="120" placeholder="Ej: 30">
+          </div>
+          <div class="form-group">
+            <label for="sexo">Sexo</label>
+            <select id="sexo">
+              <option value="hombre">Hombre</option>
+              <option value="mujer">Mujer</option>
+            </select>
+          </div>
+          <button id="calcular-btn" class="boton-primario">Calcular IMC</button>
+        </div>
+
+        <div class="imc-resultado">
+          <div class="resultado-header">
+            <h3>Tu Resultado</h3>
+            <div id="imc-valor" class="imc-valor">--.--</div>
+            <div id="imc-categoria" class="imc-categoria">Ingresa tus datos</div>
+          </div>
+          <div id="imc-descripcion" class="imc-descripcion">
+            El IMC es una medida que relaciona tu peso con tu altura. Proporciona una indicación general de si tu peso es saludable.
+          </div>
+          <div class="imc-recomendaciones">
+            <h4>Recomendaciones:</h4>
+            <ul id="recomendaciones-list">
+              <li>Ingresa tus datos para obtener recomendaciones personalizadas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráficos y estadísticas -->
+      <div class="imc-graficos">
+        <div class="grafico-container">
+          <canvas id="imcChart"></canvas>
+        </div>
+        <div class="imc-estadisticas">
+          <div class="estadistica-card">
+            <div class="estadistica-icon">📊</div>
+            <div class="estadistica-info">
+              <div class="estadistica-valor" id="porcentaje-grasa">--%</div>
+              <div class="estadistica-titulo">Grasa corporal</div>
+            </div>
+          </div>
+          <div class="estadistica-card">
+            <div class="estadistica-icon">💪</div>
+            <div class="estadistica-info">
+              <div class="estadistica-valor" id="masa-muscular">--%</div>
+              <div class="estadistica-titulo">Masa muscular</div>
+            </div>
+          </div>
+          <div class="estadistica-card">
+            <div class="estadistica-icon">💧</div>
+            <div class="estadistica-info">
+              <div class="estadistica-valor" id="agua-corporal">--%</div>
+              <div class="estadistica-titulo">Agua corporal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla de referencia IMC -->
+    <div class="imc-tabla">
+      <h3>Tabla de Referencia IMC</h3>
+      <div class="table-responsive">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>IMC</th>
+              <th>Categoría</th>
+              <th>Riesgo para la salud</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Menos de 18.5</td>
+              <td>Bajo peso</td>
+              <td>Riesgo aumentado</td>
+            </tr>
+            <tr>
+              <td>18.5 - 24.9</td>
+              <td>Peso normal</td>
+              <td>Riesgo promedio</td>
+            </tr>
+            <tr>
+              <td>25.0 - 29.9</td>
+              <td>Sobrepeso</td>
+              <td>Riesgo aumentado</td>
+            </tr>
+            <tr>
+              <td>30.0 - 34.9</td>
+              <td>Obesidad grado I</td>
+              <td>Riesgo alto</td>
+            </tr>
+            <tr>
+              <td>35.0 - 39.9</td>
+              <td>Obesidad grado II</td>
+              <td>Riesgo muy alto</td>
+            </tr>
+            <tr>
+              <td>40 o más</td>
+              <td>Obesidad grado III</td>
+              <td>Riesgo extremadamente alto</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Información adicional -->
+    <div class="imc-info">
+      <div class="info-card">
+        <h3>¿Qué es el IMC?</h3>
+        <p>El Índice de Masa Corporal (IMC) es una medida que relaciona tu peso con tu altura. Es una herramienta útil para evaluar si tu peso está dentro de un rango saludable.</p>
+      </div>
+      <div class="info-card">
+        <h3>Limitaciones del IMC</h3>
+        <p>El IMC no distingue entre masa muscular y grasa corporal. Atletas con mucha masa muscular pueden tener un IMC alto sin tener exceso de grasa.</p>
+      </div>
+      <div class="info-card">
+        <h3>Consejos para un IMC saludable</h3>
+        <p>Mantén una dieta balanceada, realiza ejercicio regularmente y consulta con un profesional de la salud para un plan personalizado.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Navegación</h3>
+        <ul class="footer-links">
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="academias.html">Academias</a></li>
+          <li><a href="articulos.html">Artículos</a></li>
+          <li><a href="defensa-personal.html">Defensa Personal</a></li>
+          <li><a href="contactos.html">Contacto</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="politica-privacidad.html">Políticas y Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <address>
+          <p><i class="icono-contacto">📍</i> Av. Deportiva 123, Arequipa, Perú</p>
+          <p><i class="icono-contacto">📞</i> (054) 987-987-987</p>
+          <p><i class="icono-contacto">✉️</i> info@sportsdefense.com</p>
+        </address>
+      </div>
+      <div class="footer-section">
+        <h3>Horarios</h3>
+        <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
+        <p>Sábados: 9:00 am - 2:00 pm</p>
+        <p>Domingos: Cerrado</p>
+      </div>
+      <div class="footer-section redes-sociales">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Facebook" src="../imagenes/facebook.png" width="32" /> Facebook
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Instagram" src="../imagenes/instagram.png" width="32" /> Instagram
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <img alt="YouTube" src="../imagenes/youtube.png" width="32" /> YouTube
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Twitter" src="../imagenes/twitter.png" width="32" /> Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Sports & Defense. Todos los derechos reservados.</p>
+      <p class="footer-legal">
+        <a href="politica-privacidad.html">Política de Privacidad</a> |
+        <a href="#">Términos de Servicio</a> |
+        <a href="#">Mapa del Sitio</a>
+      </p>
+    </div>
+  </footer>
+  <!-- Script para la calculadora -->
+  <script src="../js/Imc.js"></script>
+  <script>
+    function setupHeader() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
+      const header = document.querySelector('.header');
+      const searchToggleBtn = document.getElementById('search-toggle-btn');
+      const searchContainer = document.getElementById('search-container');
+      const closeSearch = document.getElementById('close-search');
+      const searchForm = document.getElementById('search-form');
+      const searchInput = document.getElementById('searchInput');
+      if (menuToggle && menu) { menuToggle.addEventListener('click', () => { menu.classList.toggle('active'); menuToggle.classList.toggle('active'); document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto'; }); }
+      if (searchToggleBtn && searchContainer && closeSearch && header) {
+        searchToggleBtn.addEventListener('click', (e) => { e.preventDefault(); searchContainer.classList.add('active'); header.classList.add('search-active'); if (searchInput) searchInput.focus(); });
+        closeSearch.addEventListener('click', (e) => { e.preventDefault(); searchContainer.classList.remove('active'); header.classList.remove('search-active'); });
+      }
+      if (searchForm && searchInput) {
+        searchForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const valor = searchInput.value.toLowerCase().trim();
+          const rutas = { "inicio": "../../index.html", "academias": "academias.html", "artículos": "articulos.html", "articulos": "articulos.html", "defensa personal": "defensa-personal.html", "contacto": "contactos.html", "nosotros": "nosotros.html", "politicas y privacidad": "politica-privacidad.html", "calculadora imc": "imc.html" };
+          const url = rutas[valor];
+          if (url) { window.location.href = url; } else { alert("Página no encontrada. Intenta con un nombre válido del menú."); }
+        });
+      }
+      const handleScroll = () => { if (header) { header.classList.toggle('scrolled', window.scrollY > 50); } };
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+      document.addEventListener('click', (event) => { if (menu && menu.classList.contains('active') && !menu.contains(event.target) && !menuToggle.contains(event.target)) { menu.classList.remove('active'); menuToggle.classList.remove('active'); document.body.style.overflow = 'auto'; } });
+    }
+    document.addEventListener("DOMContentLoaded", function () { setupHeader(); });
+  </script>
+</body>
+</html>

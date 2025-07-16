@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Academia de Fútbol | Sports & Defense</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Academia de fútbol profesional para todas las edades y niveles" />
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Estilos base, header, footer -->
+    <link rel="stylesheet" href="../css/responsive.css"> <!-- Media queries -->
+    <link rel="stylesheet" href="../css/search.css"> <!-- Estilos para la barra de búsqueda -->
+    <link rel="stylesheet" href="../css/animations.css"> <!-- ESTILOS PARA ANIMACIONES GLOBALES -->
+    <link rel="stylesheet" href="../css/Selector academias.css" />
+</head>
+
+<body class="grid-container pagina-academia">
+    <header class="header fixed-top">
+        <div class="container">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+            <div class="brand-container">
+                <img class="logo" src="../imagenes/logo.png" alt="Sports & Defense Logo" />
+                <h1>Sports &amp; Defense</h1>
+            </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="academias.html">Academias</a></li>
+                    <li><a href="articulos.html">Artículos</a></li>
+                    <li><a href="defensa-personal.html">Defensa Personal</a></li>
+                    <li><a href="contactos.html">Contacto</a></li>
+                    <li><a href="imc.html">Calculadora IMC</a></li>
+                    <li class="login-item"><a href="login.html" class="boton-login">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+            <div class="search-wrapper">
+                <a href="#search-container" class="search-toggle-btn" id="search-toggle-btn"
+                    aria-label="Abrir buscador">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="search-container" id="search-container">
+        <a href="#" class="close-search" id="close-search" aria-label="Cerrar buscador">&times;</a>
+        <form class="search-form" id="search-form">
+            <input class="search-input" id="searchInput" placeholder="Buscar en el sitio...">
+            <button class="search-button" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <main class="main contenido-principal">
+        <div class="selector-academias">
+            <label for="academia-selector">Selecciona una academia:</label>
+            <select id="academia-selector" class="form-control">
+                <option value="">Selecciona una academia</option>
+                <option value="academias.html">Academia de Básquetbol</option>
+                <option value="Academia de Futbol.html" selected>
+                    Academia de Fútbol
+                </option>
+                <option value="Academia de Natacion.html">
+                    Academia de Natación
+                </option>
+                <option value="Academia de Tenis.html">Academia de Tenis</option>
+                <option value="Academia de Voleibol.html">
+                    Academia de Voleibol
+                </option>
+            </select>
+        </div>
+
+        <section id="futbol" class="disciplina-futbol disciplina-basquet academia-contenido activa">
+            <h1 class="titulo-principal">Academia de Fútbol</h1>
+
+            <div class="imagen-destacada">
+                <img src="../imagenes/futbol.jpg" alt="Entrenamiento de fútbol" class="img-fluid"
+                     style="max-width:100%; border-radius: var(--borde-radio);" />
+                <p class="leyenda-imagen">Entrenamiento profesional de fútbol</p>
+            </div>
+
+            <div class="descripcion">
+                <p class="texto-descripcion">
+                    Nuestra Academia de Fútbol forma jugadores integrales con técnicas
+                    modernas. Programas para todas las edades y niveles, con metodología
+                    basada en estándares FIFA.
+                </p>
+
+                <div class="beneficios">
+                    <h3 class="subtitulo">Beneficios de nuestra academia:</h3>
+                    <ul class="lista-beneficios">
+                        <li>Entrenadores certificados por la FIFA</li>
+                        <li>Instalaciones de primer nivel</li>
+                        <li>Metodología personalizada por edades</li>
+                        <li>Programas de desarrollo técnico y táctico</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="horarios">
+                <h2 class="subtitulo-seccion">Horarios de Entrenamiento</h2>
+                <table class="tabla tabla-horarios">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Horario</th>
+                            <th>Categoría</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lunes y Miércoles</td>
+                            <td>3:00 p.m. - 5:00 p.m.</td>
+                            <td>Juveniles (13-17 años)</td>
+                        </tr>
+                        <tr>
+                            <td>Martes y Jueves</td>
+                            <td>4:00 p.m. - 6:00 p.m.</td>
+                            <td>Infantiles (6-12 años)</td>
+                        </tr>
+                        <tr>
+                            <td>Sábados</td>
+                            <td>8:00 a.m. - 11:00 a.m.</td>
+                            <td>Todas las categorías</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="multimedia promocion">
+                <h4 class="subtitulo-seccion">Video Demostrativo</h4>
+                <div class="contenedor-video video-box">
+                    <video controls width="100%" autoplay muted playsinline class="video-demo">
+                        <source src="../videos/futbol.mp4" type="video/mp4" />
+                        Tu navegador no soporta este formato de video.
+                    </video>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul class="footer-links">
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="academias.html">Academias</a></li>
+                    <li><a href="articulos.html">Artículos</a></li>
+                    <li><a href="defensa-personal.html">Defensa Personal</a></li>
+                    <li><a href="contactos.html">Contacto</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="politica-privacidad.html">Políticas y Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <address>
+                    <p><i class="icono-contacto">📍</i> Av. Deportiva 123, Arequipa, Perú</p>
+                    <p><i class="icono-contacto">📞</i> (054) 987-987-987</p>
+                    <p><i class="icono-contacto">✉️</i> info@sportsdefense.com</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
+                <p>Sábados: 9:00 am - 2:00 pm</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+            <div class="footer-section redes-sociales">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="Facebook" src="../imagenes/facebook.png" width="32" /> Facebook
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="Instagram" src="../imagenes/instagram.png" width="32" /> Instagram
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="YouTube" src="../imagenes/youtube.png" width="32" /> YouTube
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="Twitter" src="../imagenes/twitter.png" width="32" /> Twitter
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Sports & Defense. Todos los derechos reservados.</p>
+            <p class="footer-legal">
+                <a href="politica-privacidad.html">Política de Privacidad</a> |
+                <a href="#">Términos de Servicio</a> |
+                <a href="#">Mapa del Sitio</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function setupHeader() { const menuToggle = document.getElementById('menu-toggle'); const menu = document.getElementById('menu'); const header = document.querySelector('.header'); const searchToggleBtn = document.getElementById('search-toggle-btn'); const searchContainer = document.getElementById('search-container'); const closeSearch = document.getElementById('close-search'); const searchForm = document.getElementById('search-form'); const searchInput = document.getElementById('searchInput'); if (menuToggle && menu) { menuToggle.addEventListener('click', () => { menu.classList.toggle('active'); menuToggle.classList.toggle('active'); document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto'; }); } if (searchToggleBtn && searchContainer && closeSearch && header) { searchToggleBtn.addEventListener('click', (e) => { e.preventDefault(); searchContainer.classList.add('active'); header.classList.add('search-active'); if (searchInput) searchInput.focus(); }); closeSearch.addEventListener('click', (e) => { e.preventDefault(); searchContainer.classList.remove('active'); header.classList.remove('search-active'); }); } if (searchForm && searchInput) { searchForm.addEventListener('submit', (event) => { event.preventDefault(); const valor = searchInput.value.toLowerCase().trim(); const rutas = { "inicio": "../../index.html", "academias": "academias.html", "artículos": "articulos.html", "articulos": "articulos.html", "defensa personal": "defensa-personal.html", "contacto": "contactos.html", "nosotros": "nosotros.html", "politicas y privacidad": "politica-privacidad.html", "calculadora imc": "imc.html" }; const url = rutas[valor]; if (url) { window.location.href = url; } else { alert("Página no encontrada. Intenta con un nombre válido del menú."); } }); } const handleScroll = () => { if (header) { header.classList.toggle('scrolled', window.scrollY > 50); } }; window.addEventListener('scroll', handleScroll); handleScroll(); document.addEventListener('click', (event) => { if (menu && menu.classList.contains('active') && !menu.contains(event.target) && !menuToggle.contains(event.target)) { menu.classList.remove('active'); menuToggle.classList.remove('active'); document.body.style.overflow = 'auto'; } }); }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("academia-selector").addEventListener("change", function () {
+                const selectedPage = this.value;
+                if (selectedPage) {
+                    window.location.href = selectedPage; // Redirige a la página seleccionada
+                }
+            });
+            setupHeader();
+        });
+    </script>
+</body>
+
+</html>

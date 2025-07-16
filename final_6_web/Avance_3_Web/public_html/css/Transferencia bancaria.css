@@ -1,0 +1,61 @@
+/* Transferencia Bancaria CSS */
+/* Estilos para la sección de transferencia bancaria */
+.datos-bancarios {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #e1e1e1;
+}
+
+.banco-peru {
+  padding: 15px;
+  margin-bottom: 15px;
+  background: white;
+  border-radius: 5px;
+  border-left: 4px solid #2a5ca7;
+}
+
+.banco-peru h4 {
+  color: #2a5ca7;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.banco-peru p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.instrucciones-transferencia {
+  background: #fff8e6;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ffe8a1;
+}
+
+.instrucciones-transferencia ol {
+  padding-left: 20px;
+}
+
+.instrucciones-transferencia li {
+  margin-bottom: 8px;
+}
+
+.info-adicional {
+  font-size: 13px;
+  color: #555;
+  border-top: 1px dashed #ccc;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.logo-pago img {
+  max-height: 30px;
+  margin-right: 10px;
+}
+
+.opcion-pago {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,171 @@
+/* tienda.css - Estilos para Sports & Defense */
+
+
+/* Buscador */
+form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+form input {
+  padding: 0.5rem;
+  border-radius: var(--borde-radio);
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+form button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-principal);
+  color: white;
+  border: none;
+  border-radius: var(--borde-radio);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: var(--color-hover);
+}
+
+/* Filtros */
+.filtros {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.botones-filtro {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.boton-filtro {
+  background: var(--color-acento);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--borde-radio);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.boton-filtro.activo,
+.boton-filtro:hover {
+  background-color: var(--color-hover);
+}
+
+/* Productos */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.producto {
+  background-color: white;
+  border-radius: var(--borde-radio);
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--borde-radio);
+}
+
+.producto h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.descripcion {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.precio {
+  font-weight: bold;
+  color: var(--color-principal);
+  margin-top: 0.5rem;
+}
+
+.agregar-carrito {
+  background: var(--color-secundario);
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  margin-top: 0.8rem;
+  border-radius: var(--borde-radio);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.agregar-carrito:hover {
+  background: var(--color-hover);
+}
+
+/* Carrito */
+.carrito-container {
+  position: fixed;
+  top: 6rem;
+  right: 1rem;
+  z-index: 999;
+}
+
+.carrito-btn {
+  background: var(--color-primario);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--borde-radio);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-oscuro);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+.redes-sociales {
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.redes-sociales a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: opacity 0.3s;
+}
+
+.redes-sociales a:hover {
+  opacity: 0.8;
+}

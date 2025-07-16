@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Finalizar Compra - Sports & Defense</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Estilos base, header, footer -->
+    <link rel="stylesheet" href="../css/utilidades.css"> <!-- Para botones y formularios -->
+    <link rel="stylesheet" href="../css/search.css"> <!-- ESTILOS PARA LA BARRA DE BÚSQUEDA -->
+    <link rel="stylesheet" href="../css/animations.css"> <!-- ESTILOS PARA ANIMACIONES GLOBALES -->
+    <link rel="stylesheet" href="../css/checkout.css"> <!-- Estilos específicos de la página de pago -->
+    <link rel="stylesheet" href="../css/carrito.css"> <!-- Para el resumen del carrito -->
+    <link rel="stylesheet" href="../css/responsive.css"> <!-- Media queries -->
+    <link rel="stylesheet" href="../css/Transferencia bancaria.css"> <!-- Estilo existente, se mantiene -->
+    <script src="../js/carrito.js" defer></script>
+    <script src="../js/checkout.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="../js/generar y descargar factura.js" defer></script>
+
+</head>
+
+<body class="grid-container">
+
+    <header class="header fixed-top">
+        <div class="container">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+            <div class="brand-container">
+                <img class="logo" src="../imagenes/logo.png" alt="Sports & Defense Logo" />
+                <h1>Sports &amp; Defense</h1>
+            </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="academias.html">Academias</a></li>
+                    <li><a href="articulos.html">Artículos</a></li>
+                    <li><a href="defensa-personal.html">Defensa Personal</a></li>
+                    <li><a href="contactos.html">Contacto</a></li>
+                    <li><a href="imc.html">Calculadora IMC</a></li>
+                    <li class="login-item"><a href="login.html" class="boton-login">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+            <div class="search-wrapper">
+                <a href="#search-container" class="search-toggle-btn" id="search-toggle-btn"
+                    aria-label="Abrir buscador">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="search-container" id="search-container">
+        <a href="#" class="close-search" id="close-search" aria-label="Cerrar buscador">&times;</a>
+        <form class="search-form" id="search-form">
+            <input class="search-input" id="searchInput" placeholder="Buscar en el sitio...">
+            <button class="search-button" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <main class="main">
+  
+
+        <!-- Checkout completo -->
+        <div class="checkout-container">
+            <!-- Panel izquierdo: Formulario de checkout -->
+            <div class="checkout-form-container">
+                <!-- Sección 1: Datos de envío -->
+                <section id="datos-envio" class="seccion-checkout activa">
+                    <h2>Datos de Envío</h2>
+                    <form id="form-envio" class="form-checkout">
+                        <div class="form-grupo">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="Ej. usuario@example.com">
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 555-123-4567">
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" name="direccion" required
+                                placeholder="Ej. Calle Principal 123">
+                        </div>
+                        <div class="form-fila">
+                            <div class="form-grupo">
+                                <label for="departamento">Departamento</label>
+                                <select id="departamento" name="departamento" required>
+                                    <option value="">Selecciona un departamento</option>
+                                    <option value="amazonas">Amazonas</option>
+                                    <option value="ancash">Áncash</option>
+                                    <option value="apurimac">Apurímac</option>
+                                    <option value="arequipa">Arequipa</option>
+                                    <option value="ayacucho">Ayacucho</option>
+                                    <option value="cajamarca">Cajamarca</option>
+                                    <option value="cusco">Cusco</option>
+                                    <option value="huancavelica">Huancavelica</option>
+                                    <option value="huanuco">Huánuco</option>
+                                    <option value="ica">Ica</option>
+                                    <option value="junin">Junín</option>
+                                    <option value="la_libertad">La Libertad</option>
+                                    <option value="lambayeque">Lambayeque</option>
+                                    <option value="lima">Lima</option>
+                                    <option value="loreto">Loreto</option>
+                                    <option value="madre_de_dios">Madre de Dios</option>
+                                    <option value="moquegua">Moquegua</option>
+                                    <option value="pasco">Pasco</option>
+                                    <option value="piura">Piura</option>
+                                    <option value="puno">Puno</option>
+                                    <option value="san_martin">San Martín</option>
+                                    <option value="tacna">Tacna</option>
+                                    <option value="tumbes">Tumbes</option>
+                                    <option value="ucayali">Ucayali</option>
+                                </select>
+                            </div>
+
+                            <div class="form-grupo">
+                                <label for="distrito">Distrito</label>
+                                <input type="text" id="distrito" name="distrito" required placeholder="Ej. Miraflores">
+                            </div>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="guardar-info" name="guardar-info">
+                            <label for="guardar-info">Guardar información para futuras compras</label>
+                        </div>
+
+                        <div class="botones-nav">
+                            <button type="button" id="volver-tienda" class="boton-secundario">Volver a la tienda</button>
+                            <button type="button" id="siguiente-pago" class="boton-primario">Continuar a Pago</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Sección 2: Métodos de pago -->
+                <section id="metodo-pago" class="seccion-checkout">
+                    <h2>Método de Pago</h2>
+                    <form id="form-pago" class="form-checkout">
+                        <div class="metodo-pago-container">
+                            <div class="opciones-pago">
+                                <div class="opcion-pago" id="opcion-tarjeta">
+                                    <input type="radio" id="tarjeta" name="metodo-pago" value="tarjeta" checked>
+                                    <label for="tarjeta">
+                                        <div class="logo-pago">
+                                            <img src="../imagenes/visa.png" alt="Tarjeta de crédito">
+                                        </div>
+                                        <span>Tarjeta de Crédito/Débito</span>
+                                    </label>
+                                </div>
+
+                                <div class="opcion-pago" id="opcion-paypal">
+                                    <input type="radio" id="paypal" name="metodo-pago" value="paypal">
+                                    <label for="paypal">
+                                        <div class="logo-pago">
+                                            <img src="../imagenes/paypal.png" alt="PayPal">
+                                        </div>
+                                        <span>PayPal</span>
+                                    </label>
+                                </div>
+
+                                <div class="opcion-pago" id="opcion-transferencia">
+                                    <input type="radio" id="transferencia" name="metodo-pago" value="transferencia">
+                                    <label for="transferencia">
+                                        <div class="logo-pago">
+                                            <img src="../imagenes/transferencia.png" alt="Transferencia bancaria">
+                                        </div>
+                                        <span>Transferencia Bancaria</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Formulario de tarjeta de crédito -->
+                            <div id="form-tarjeta" class="form-pago-detalle">
+                                <div class="form-grupo">
+                                    <label for="titular-tarjeta">Titular de la tarjeta</label>
+                                    <input type="text" id="titular-tarjeta" name="titular-tarjeta"
+                                        placeholder="Nombre como aparece en la tarjeta" required>
+                                </div>
+
+                                <div class="form-grupo">
+                                    <label for="numero-tarjeta">Número de tarjeta</label>
+                                    <input type="text" id="numero-tarjeta" name="numero-tarjeta"
+                                        placeholder="1234 5678 9012 3456" required>
+                                    <div class="iconos-tarjetas">
+                                        <span class="icono-tarjeta visa">Visa</span>
+                                        <span class="icono-tarjeta mastercard">Mastercard</span>
+                                        <span class="icono-tarjeta amex">Amex</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-fila">
+                                    <div class="form-grupo">
+                                        <label for="fecha-expiracion">Fecha de expiración</label>
+                                        <input type="text" id="fecha-expiracion" name="fecha-expiracion"
+                                            placeholder="MM/AA" required>
+                                    </div>
+
+                                    <div class="form-grupo">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                        <div class="tooltip">
+                                            <span class="icono-info">i</span>
+                                            <span class="tooltip-text">Los 3 dígitos en el reverso de tu tarjeta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Detalles de PayPal (inicialmente oculto) -->
+                            <div id="form-paypal" class="form-pago-detalle oculto">
+                                <p class="info-paypal">Serás redireccionado a PayPal para completar el pago de forma
+                                    segura. Una vez completado el pago en PayPal, serás devuelto automáticamente a
+                                    nuestra tienda para finalizar tu pedido.</p>
+                                <div class="logo-paypal">
+                                    <img src="../imagenes/paypal.png" alt="Logo de PayPal">
+                                </div>
+                            </div>
+
+                            <!-- Detalles de transferencia bancaria (actualizado para Perú) -->
+                            <div id="form-transferencia" class="form-pago-detalle oculto">
+                                <p class="info-transferencia">Realiza una transferencia o depósito a nuestras cuentas
+                                    bancarias en Perú. Por favor, incluye tu número de pedido como concepto.</p>
+
+                                <div class="datos-bancarios">
+                                    <h3>Datos Bancarios</h3>
+
+                                    <div class="banco-peru">
+                                        <h4>Banco de Crédito del Perú (BCP)</h4>
+                                        <p><strong>Tipo de Cuenta:</strong> Cuenta Corriente en Soles</p>
+                                        <p><strong>Titular:</strong> SPORTS & DEFENSE S.A.C.</p>
+                                        <p><strong>N° de Cuenta:</strong> 191-23456789-0-12</p>
+                                        <p><strong>CCI:</strong> 00219112345678901234</p>
+                                    </div>
+
+                                    <div class="banco-peru">
+                                        <h4>Interbank</h4>
+                                        <p><strong>Tipo de Cuenta:</strong> Cuenta Ahorros en Soles</p>
+                                        <p><strong>Titular:</strong> SPORTS & DEFENSE S.A.C.</p>
+                                        <p><strong>N° de Cuenta:</strong> 123-4567890123-45</p>
+                                        <p><strong>CCI:</strong> 00312304567890123456</p>
+                                    </div>
+
+                                    <div class="banco-peru">
+                                        <h4>BBVA Continental</h4>
+                                        <p><strong>Tipo de Cuenta:</strong> Cuenta Corriente en Dólares</p>
+                                        <p><strong>Titular:</strong> SPORTS & DEFENSE S.A.C.</p>
+                                        <p><strong>N° de Cuenta:</strong> 0011-0234-5678901234</p>
+                                        <p><strong>CCI:</strong> 01112345678901234567</p>
+                                    </div>
+                                </div>
+
+                                <div class="instrucciones-transferencia">
+                                    <h3>Instrucciones importantes:</h3>
+                                    <ol>
+                                        <li>Realiza el pago dentro de las próximas 24 horas para garantizar tu pedido.
+                                        </li>
+                                        <li>Envía el comprobante de pago a <strong>pagos@sportsdefense.com</strong> con
+                                            tu número de pedido.</li>
+                                        <li>Tu pedido será procesado una vez confirmemos el pago (dentro de 24 horas
+                                            hábiles).</li>
+                                        <li>Para pagos desde el extranjero, usa solo la cuenta en dólares.</li>
+                                    </ol>
+                                </div>
+
+                                <div class="info-adicional">
+                                    <p><strong>RUC:</strong> 20567890123</p>
+                                    <p><strong>Razón Social:</strong> SPORTS & DEFENSE SOCIEDAD ANÓNIMA CERRADA</p>
+                                    <p><strong>Dirección Fiscal:</strong> Av. Javier Prado Este 1234, San Isidro, Lima
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="botones-nav">
+                            <button type="button" id="volver-envio" class="boton-secundario">Volver a Envío</button>
+                            <button type="button" id="siguiente-confirmacion" class="boton-primario">Continuar</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Sección 3: Confirmación del pedido -->
+                <section id="confirmacion-pedido" class="seccion-checkout">
+                    <br>
+                    <h2>Confirmación del Pedido</h2>
+
+                    <div class="resumen-pedido">
+                        <h3>Resumen de tu compra</h3>
+                        <div id="resumen-productos">
+                            <!-- Se rellena dinámicamente con JavaScript -->
+                        </div>
+
+                        <div class="resumen-totales">
+                            <div class="linea-resumen">
+                                <span>Subtotal:</span>
+                                <span id="resumen-subtotal">S/0.00</span>
+                            </div>
+                            <div class="linea-resumen">
+                                <span>Gastos de envío:</span>
+                                <span id="resumen-envio">S/5.99</span>
+                            </div>
+                            <div class="linea-resumen descuento-aplicado" id="linea-descuento-confirmacion" style="display: none;">
+                                <span>Descuento:</span>
+                                <span id="descuento-confirmacion">-S/0.00</span>
+                            </div>
+                            <div class="linea-resumen total">
+                                <span>Total:</span>
+                                <span id="resumen-total">S/0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="datos-confirmacion">
+                        <h3>Dirección de envío</h3>
+                        <div id="confirmacion-direccion">
+                            <!-- Se rellena dinámicamente con JavaScript -->
+                        </div>
+
+                        <h3>Método de pago</h3>
+                        <div id="confirmacion-pago">
+                            <!-- Se rellena dinámicamente con JavaScript -->
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="acepto-terminos" name="acepto-terminos" required>
+                            <label for="acepto-terminos">Acepto los <a href="#">términos y condiciones</a> y la <a
+                                    href="#">política de privacidad</a></label>
+                        </div>
+                    </div>
+
+                    <div class="botones-nav">
+                        <button type="button" id="volver-pago" class="boton-secundario">Volver</button>
+                        <button type="button" id="confirmar-pedido" class="boton-primario">Finalizar Compra</button>
+                    </div>
+                </section>
+
+                <section id="pedido-completado" class="seccion-checkout">
+                    <div class="confirmacion-exito">
+                        <div class="icono-exito">✓</div>
+                        <h2>¡Gracias por tu compra!</h2>
+                        <p>Tu pedido ha sido procesado correctamente.</p>
+                        <p class="numero-pedido">Número de pedido: <strong id="id-pedido">SD-12345</strong></p>
+
+                        <p class="info-email">Hemos enviado un correo electrónico de confirmación a <strong
+                                id="email-confirmacion">usuario@example.com</strong> con todos los detalles de tu
+                            compra.</p>
+
+                        <div class="proximos-pasos">
+                            <h3>Próximos pasos</h3>
+                            <ul>
+                                <li>Recibirás una notificación cuando tu pedido sea enviado.</li>
+                                <li>Puedes hacer seguimiento de tu pedido desde tu cuenta.</li>
+                                <li>Para cualquier consulta, no dudes en contactar con nuestro servicio de atención al
+                                    cliente.</li>
+                            </ul>
+                        </div>
+
+                        <div class="botones-finales">
+                            <a href="articulos.html" class="boton-primario">Volver a la Tienda</a>
+                            <button id="descargar-factura" class="boton-secundario">Descargar Factura</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Panel derecho: Resumen del carrito -->
+            <div id="resumen-carrito" class="resumen-carrito">
+                <h3>Tu Carrito</h3>
+                <div id="items-resumen" class="items-resumen">
+                    <!-- Se rellena dinámicamente con JavaScript -->
+                </div>
+                <div class="totales-resumen">
+                    <div class="linea-resumen">
+                        <span>Subtotal</span>
+                        <span id="subtotal-carrito">S/0.00</span>
+                    </div>
+                    <div class="linea-resumen">
+                        <span>Envío</span>
+                        <span id="envio-carrito">S/5.99</span>
+                    </div>
+                    <div class="linea-resumen descuento-aplicado" id="linea-descuento-resumen" style="display: none;">
+                        <span>Descuento</span>
+                        <span id="descuento-resumen">-S/0.00</span>
+                    </div>
+                    <div class="linea-resumen total">
+                        <span>Total</span>
+                        <span id="total-carrito">S/0.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul class="footer-links">
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="academias.html">Academias</a></li>
+                    <li><a href="articulos.html">Artículos</a></li>
+                    <li><a href="defensa-personal.html">Defensa Personal</a></li>
+                    <li><a href="contactos.html">Contacto</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="politica-privacidad.html">Políticas y Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <address>
+                    <p><i class="icono-contacto">📍</i> Av. Deportiva 123, Arequipa, Perú</p>
+                    <p><i class="icono-contacto">📞</i> (054) 987-987-987</p>
+                    <p><i class="icono-contacto">✉️</i> info@sportsdefense.com</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
+                <p>Sábados: 9:00 am - 2:00 pm</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+            <div class="footer-section redes-sociales">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="Facebook" src="../imagenes/facebook.png" width="32" /> Facebook
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="Instagram" src="../imagenes/instagram.png" width="32" /> Instagram
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="YouTube" src="../imagenes/youtube.png" width="32" /> YouTube
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="Twitter" src="../imagenes/twitter.png" width="32" /> Twitter
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Sports & Defense. Todos los derechos reservados.</p>
+            <p class="footer-legal">
+                <a href="politica-privacidad.html">Política de Privacidad</a> |
+                <a href="#">Términos de Servicio</a> |
+                <a href="#">Mapa del Sitio</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function setupHeader() { const menuToggle = document.getElementById('menu-toggle'); const menu = document.getElementById('menu'); const header = document.querySelector('.header'); const searchToggleBtn = document.getElementById('search-toggle-btn'); const searchContainer = document.getElementById('search-container'); const closeSearch = document.getElementById('close-search'); const searchForm = document.getElementById('search-form'); const searchInput = document.getElementById('searchInput'); if (menuToggle && menu) { menuToggle.addEventListener('click', () => { menu.classList.toggle('active'); menuToggle.classList.toggle('active'); document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto'; }); } if (searchToggleBtn && searchContainer && closeSearch && header) { searchToggleBtn.addEventListener('click', (e) => { e.preventDefault(); searchContainer.classList.add('active'); header.classList.add('search-active'); if (searchInput) searchInput.focus(); }); closeSearch.addEventListener('click', (e) => { e.preventDefault(); searchContainer.classList.remove('active'); header.classList.remove('search-active'); }); } if (searchForm && searchInput) { searchForm.addEventListener('submit', (event) => { event.preventDefault(); const valor = searchInput.value.toLowerCase().trim(); const rutas = { "inicio": "../../index.html", "academias": "academias.html", "artículos": "articulos.html", "articulos": "articulos.html", "defensa personal": "defensa-personal.html", "contacto": "contactos.html", "nosotros": "nosotros.html", "politicas y privacidad": "politica-privacidad.html", "calculadora imc": "imc.html" }; const url = rutas[valor]; if (url) { window.location.href = url; } else { alert("Página no encontrada. Intenta con un nombre válido del menú."); } }); } const handleScroll = () => { if (header) { header.classList.toggle('scrolled', window.scrollY > 50); } }; window.addEventListener('scroll', handleScroll); handleScroll(); document.addEventListener('click', (event) => { if (menu && menu.classList.contains('active') && !menu.contains(event.target) && !menuToggle.contains(event.target)) { menu.classList.remove('active'); menuToggle.classList.remove('active'); document.body.style.overflow = 'auto'; } }); }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            setupHeader();
+        });
+    </script>
+</body>
+
+</html>

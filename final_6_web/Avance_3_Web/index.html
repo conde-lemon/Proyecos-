@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deportes y Defensa Personal</title>
+  <link rel="stylesheet" href="public_html/css/styles.css"> <!-- Estilos base, header, footer -->
+  <link rel="stylesheet" href="public_html/css/utilidades.css"> <!-- Para botones y clases como mx-auto -->
+  <link rel="stylesheet" href="public_html/css/carrusel-simplificado.css"> <!-- Estilos específicos del carrusel -->
+  <link rel="stylesheet" href="public_html/css/destacado.css"> <!-- Para banners y sección de promoción -->
+  <link rel="stylesheet" href="public_html/css/search.css"> <!-- ESTILOS PARA LA BARRA DE BÚSQUEDA -->
+  <link rel="stylesheet" href="public_html/css/animations.css"> <!-- ESTILOS PARA ANIMACIONES GLOBALES -->
+  <link rel="stylesheet" href="public_html/css/responsive.css"> <!-- Media queries para responsividad -->
+</head>
+
+<body class="grid-container">
+
+  <header class="header fixed-top">
+    <div class="container">
+      <!-- Botón del menú hamburguesa -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <span class="hamburger"></span>
+      </button>
+  
+      <!-- Logo y título -->
+      <div class="brand-container">
+        <img class="logo" src="public_html/imagenes/logo.png" alt="Sports & Defense Logo" />
+        <h1>Sports &amp; Defense</h1>
+      </div>
+  
+      <!-- Menú principal -->
+      <nav class="menu" id="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="public_html/Paginas/academias.html">Academias</a></li>
+          <li><a href="public_html/Paginas/articulos.html">Artículos</a></li>
+          <li><a href="public_html/Paginas/defensa-personal.html">Defensa Personal</a></li>
+          <li><a href="public_html/Paginas/contactos.html">Contacto</a></li>
+          <li><a href="public_html/Paginas/imc.html">Calculadora IMC</a></li>
+          <li class="login-item"><a href="public_html/Paginas/login.html" class="boton-login">Iniciar Sesión</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón de búsqueda -->
+      <div class="search-wrapper">
+        <a href="#search-container" class="search-toggle-btn" id="search-toggle-btn" aria-label="Abrir buscador">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de búsqueda Overlay -->
+  <div class="search-container" id="search-container">
+    <a href="#" class="close-search" id="close-search" aria-label="Cerrar buscador">&times;</a>
+    <form class="search-form" id="search-form">
+      <input class="search-input" id="searchInput" placeholder="Buscar en el sitio...">
+      <button class="search-button" type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <!-- Cuerpo Principal -->
+  <main class="main">
+
+    <!-- Título Principal -->
+    <h1>Bienvenido a Sports & Defense</h1>
+    <!-- Mostrar información del usuario si está logueado -->
+    <div id="user-info" style="display: none; text-align: center; margin-bottom: 20px;">
+      <p>Bienvenido, <span id="user-name"></span>!</p>
+      <button id="logout-btn" class="boton-primario">Cerrar sesión</button>
+    </div>
+
+    <div class="mx-auto">
+      <h2 class="gradiente"><b>Cursos destacados</b></h2>
+    </div>
+
+    <!-- Carrusel Simplificado -->
+    <div class="carrusel-simplificado-container">
+      <div class="carrusel-simplificado">
+        <!-- Item 1 - Básquetbol -->
+        <div class="carrusel-simplificado-item">
+          <img src="public_html/imagenes/basquet.jpg" alt="Básquetbol" class="carrusel-simplificado-img">
+          <div class="carrusel-simplificado-caption">
+            <h3>Básquetbol</h3>
+            <p>Deporte de equipo</p>
+          </div>
+        </div>
+
+        <!-- Item 2 - Jiu-Jitsu -->
+        <div class="carrusel-simplificado-item">
+          <img src="public_html/imagenes/jiu-jitsu.jpg" alt="Jiu-Jitsu" class="carrusel-simplificado-img">
+          <div class="carrusel-simplificado-caption">
+            <h3>Jiu-Jitsu</h3>
+            <p>Arte marcial</p>
+          </div>
+        </div>
+
+        <!-- Item 3 - Krav Maga -->
+        <div class="carrusel-simplificado-item">
+          <img src="public_html/imagenes/KravMaga.jpg" alt="Krav Maga" class="carrusel-simplificado-img">
+          <div class="carrusel-simplificado-caption">
+            <h3>Krav Maga</h3>
+            <p>Defensa personal</p>
+          </div>
+        </div>
+
+        <!-- Item 4 - Equipamiento -->
+        <div class="carrusel-simplificado-item">
+          <img src="public_html/imagenes/equipamientos.jpg" alt="Equipamiento" class="carrusel-simplificado-img">
+          <div class="carrusel-simplificado-caption">
+            <h3>Equipamiento</h3>
+            <p>Deportes y defensa</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carrusel-simplificado-control carrusel-simplificado-prev">&#10094;</button>
+      <button class="carrusel-simplificado-control carrusel-simplificado-next">&#10095;</button>
+
+      <div class="carrusel-pagination">
+        <span class="carrusel-pagination-dot active" data-slide="0"></span>
+        <span class="carrusel-pagination-dot" data-slide="1"></span>
+        <span class="carrusel-pagination-dot" data-slide="2"></span>
+        <span class="carrusel-pagination-dot" data-slide="3"></span>
+      </div>
+    </div>
+    <!-- Banners destacados -->
+    <div class="banner-destacado">
+      <h2>¡Inscríbete en nuestras clases hoy!</h2>
+      <a href="public_html/Paginas/academias.html" class="boton-banner">Ver horarios</a>
+    </div>
+    <!-- Contenedor de información -->
+    <div class="carrusel-info-container">
+      <!-- Info 1 - Básquetbol -->
+      <div class="carrusel-info active" data-index="0">
+        <h2 class="carrusel-info-title">Academia Profesional de Básquetbol</h2>
+        <p class="carrusel-info-description">
+          Entrenamientos para todas las edades y niveles. Mejora tus habilidades con nuestros entrenadores certificados.
+          Clases para niños, jóvenes y adultos.
+        </p>
+
+        <div class="carrusel-features">
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">🏀</span>
+            <span>Entrenamientos diarios</span>
+          </div>
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">⏱️</span>
+            <span>2 horas por sesión</span>
+          </div>
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">👥</span>
+            <span>Grupos reducidos</span>
+          </div>
+        </div>
+
+        <a href="public_html/Paginas/academias.html" class="carrusel-link">Ver más detalles</a>
+      </div>
+
+
+      <!-- Info 2 - Jiu-Jitsu -->
+      <div class="carrusel-info" data-index="1">
+        <h2 class="carrusel-info-title">Clases de Jiu-Jitsu Brasileño</h2>
+        <p class="carrusel-info-description">
+          Aprende técnicas de defensa personal y competición con nuestro equipo de expertos. Métodos adaptados a todos
+          los niveles de habilidad.
+        </p>
+
+        <div class="carrusel-features">
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">🥋</span>
+            <span>Técnicas avanzadas</span>
+          </div>
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">🛡️</span>
+            <span>Defensa personal</span>
+          </div>
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">⚡</span>
+            <span>Entrenamiento físico</span>
+          </div>
+        </div>
+
+        <a href="public_html/Paginas/academias.html" class="carrusel-link">Ver más detalles</a>
+      </div>
+
+      <!-- Info 3 - Krav Maga -->
+      <div class="carrusel-info" data-index="2">
+        <h2 class="carrusel-info-title">Entrenamiento de Krav Maga</h2>
+        <p class="carrusel-info-description">
+          Sistema de defensa personal militar israelí. Aprende a defenderte en situaciones reales con técnicas probadas
+          en combate.
+        </p>
+
+        <div class="carrusel-features">
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">💪</span>
+            <span>Técnicas reales</span>
+          </div>
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">🚨</span>
+            <span>Situaciones de peligro</span>
+          </div>
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">🔄</span>
+            <span>Entrenamiento continuo</span>
+          </div>
+        </div>
+
+        <a href="public_html/Paginas/academias.html" class="carrusel-link">Ver más detalles</a>
+      </div>
+
+      <!-- Info 4 - Equipamiento -->
+      <div class="carrusel-info" data-index="3">
+        <h2 class="carrusel-info-title">Artículos y Equipamiento Profesional</h2>
+        <p class="carrusel-info-description">
+          Encuentra todo lo que necesitas para tu entrenamiento: protecciones, guantes, balones, uniformes y equipos de
+          alta calidad.
+        </p>
+
+        <div class="carrusel-features">
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">🛒</span>
+            <span>Envíos rápidos</span>
+          </div>
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">⭐</span>
+            <span>Marcas premium</span>
+          </div>
+          <div class="carrusel-feature">
+            <span class="carrusel-feature-icon">🔧</span>
+            <span>Asesoramiento</span>
+          </div>
+        </div>
+
+        <a href="public_html/Paginas/articulos.html" class="carrusel-link">Ver productos</a>
+      </div>
+    </div>
+
+    <!-- Calculadora de IMC -->
+    <div class="banner-destacado">
+      <h2>Calculadora de IMC Online</h2>
+      <a href="public_html/Paginas/imc.html" class="boton-banner">Calcular IMC</a>
+    </div>
+
+    <!-- Video -->
+    <div class="promocion">
+      <section class="video-box">
+        <h2>Entrenamiento Defensa Personal</h2>
+        <video autoplay controls muted width="100%">
+          <source src="public_html/videos/defensapersonal.mp4" type="video/mp4" />
+        </video>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Sección de navegación -->
+      <div class="footer-section">
+        <h3>Navegación</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="public_html/Paginas/academias.html">Academias</a></li>
+          <li><a href="public_html/Paginas/articulos.html">Artículos</a></li>
+          <li><a href="public_html/Paginas/defensa-personal.html">Defensa Personal</a></li>
+          <li><a href="public_html/Paginas/contactos.html">Contacto</a></li>
+          <li><a href="public_html/Paginas/nosotros.html">Nosotros</a></li>
+          <li><a href="public_html/Paginas/politica-privacidad.html">Políticas y Privacidad</a></li>
+        </ul>
+      </div>
+  
+      <!-- Sección de contacto -->
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <address>
+          <p><i class="icono-contacto">📍</i> Av. Deportiva 123, Arequipa, Perú</p>
+          <p><i class="icono-contacto">📞</i> (054) 987-987-987</p>
+          <p><i class="icono-contacto">✉️</i> info@sportsdefense.com</p>
+        </address>
+      </div>
+  
+      <!-- Sección de horarios -->
+      <div class="footer-section">
+        <h3>Horarios</h3>
+        <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
+        <p>Sábados: 9:00 am - 2:00 pm</p>
+        <p>Domingos: Cerrado</p>
+      </div>
+  
+      <!-- Sección de redes sociales -->
+      <div class="footer-section redes-sociales">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Facebook" src="public_html/imagenes/facebook.png" width="32" /> Facebook
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Instagram" src="public_html/imagenes/instagram.png" width="32" /> Instagram
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <img alt="YouTube" src="public_html/imagenes/youtube.png" width="32" /> YouTube
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Twitter" src="public_html/imagenes/twitter.png" width="32" /> Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 Sports & Defense. Todos los derechos reservados.</p>
+      <p class="footer-legal">
+        <a href="public_html/Paginas/politica-privacidad.html">Política de Privacidad</a> |
+        <a href="#">Términos de Servicio</a> |
+        <a href="#">Mapa del Sitio</a>
+      </p>
+    </div>
+  </footer>
+  <!-- JavaScript Carrusel -->
+  <script src="public_html/js/carrusel.js"></script>
+
+  <!-- Scripts de la página -->
+  <script>
+    function setupHeader() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
+      const header = document.querySelector('.header');
+      const searchToggleBtn = document.getElementById('search-toggle-btn');
+      const searchContainer = document.getElementById('search-container');
+      const closeSearch = document.getElementById('close-search');
+      const searchForm = document.getElementById('search-form');
+      const searchInput = document.getElementById('searchInput');
+
+      // Lógica para el menú hamburguesa
+      if (menuToggle && menu) {
+        menuToggle.addEventListener('click', () => {
+          menu.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+      }
+
+      // Lógica para el buscador overlay
+      if (searchToggleBtn && searchContainer && closeSearch && header) {
+        searchToggleBtn.addEventListener('click', (e) => {
+          e.preventDefault(); // Prevenir el salto al ancla #
+          searchContainer.classList.add('active');
+          header.classList.add('search-active');
+          if(searchInput) searchInput.focus();
+        });
+
+        closeSearch.addEventListener('click', (e) => {
+          e.preventDefault();
+          searchContainer.classList.remove('active');
+          header.classList.remove('search-active');
+        });
+      }
+
+      // Lógica del formulario de búsqueda
+      if (searchForm && searchInput) {
+        searchForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const valor = searchInput.value.toLowerCase().trim();
+          const rutas = {
+            "inicio": "index.html",
+            "academias": "public_html/Paginas/academias.html",
+            "artículos": "public_html/Paginas/articulos.html",
+            "articulos": "public_html/Paginas/articulos.html",
+            "defensa personal": "public_html/Paginas/defensa-personal.html",
+            "contacto": "public_html/Paginas/contactos.html",
+            "nosotros": "public_html/Paginas/nosotros.html",
+            "politicas y privacidad": "public_html/Paginas/politica-privacidad.html",
+            "calculadora imc": "public_html/Paginas/imc.html"
+          };
+          const url = rutas[valor];
+          if (url) {
+            window.location.href = url;
+          } else {
+            alert("Página no encontrada. Intenta con un nombre válido del menú.");
+          }
+        });
+      }
+
+      // Efecto de scroll para encoger el header
+      const handleScroll = () => {
+        if (header) {
+          header.classList.toggle('scrolled', window.scrollY > 50);
+        }
+      };
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+
+      // Cerrar menús al hacer clic fuera de ellos
+      document.addEventListener('click', (event) => {
+        if (menu && menu.classList.contains('active') && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
+          menu.classList.remove('active');
+          menuToggle.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+
+    // Verificar si el usuario está logueado al cargar la página
+    document.addEventListener("DOMContentLoaded", function () {
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        const userInfo = document.getElementById("user-info");
+        const userName = document.getElementById("user-name");
+        const logoutBtn = document.getElementById("logout-btn");
+
+        if (isLoggedIn) {
+            const userData = JSON.parse(localStorage.getItem("currentUser"));
+            if (userData) {
+                userInfo.style.display = "block";
+                userName.textContent = userData.nombre + " " + userData.apellido;
+            }
+        } else {
+            // Guardar la página actual para redireccionar después del login
+            localStorage.setItem("redirectAfterLogin", window.location.pathname);
+        }
+
+        // Manejar cierre de sesión
+        if (logoutBtn) {
+            logoutBtn.addEventListener("click", function () {
+                localStorage.removeItem("isLoggedIn");
+                localStorage.removeItem("currentUser");
+                // Redireccionar a la página actual para actualizar la UI
+                window.location.reload();
+            });
+        }
+
+        // Llamar a la función para configurar el header
+        setupHeader();
+    });
+</script>
+</body>
+
+</html>

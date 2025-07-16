@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Estilos para el Buscador Overlay (Implementación con JavaScript)
+   ========================================================================== */
+
+/* Contenedor del overlay de búsqueda */
+.search-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Misma altura que el header */
+    background: var(--color-primario); /* Fondo sólido oscuro para el foco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001; /* Encima del header pero permite que otros elementos estén por encima */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease, opacity 0.3s ease, visibility 0s 0.4s;
+    pointer-events: none;
+}
+
+/* Estado activo del contenedor (controlado por JS) */
+.search-container.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: all;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+/* Formulario dentro del overlay */
+.search-container .search-form {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    transform: none;
+    opacity: 1;
+    transition: none;
+}
+
+/* Campo de input */
+.search-container .search-input {
+    width: 100%;
+    padding: 0.9rem 4rem 0.9rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-texto);
+    box-shadow: var(--sombra-fuerte);
+    transition: all 0.3s ease;
+}
+
+.search-container .search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-acento);
+}
+
+/* Botón de búsqueda dentro del input */
+.search-container .search-button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-principal-tema);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.search-container .search-button:hover {
+    background-color: var(--color-hover-tema);
+}
+
+/* Botón para cerrar el overlay */
+.close-search {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem; /* Ajustado para estar dentro de la barra */
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-gris-claro);
+    font-size: 1.8rem;
+    line-height: 1;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 1002; /* Asegura que esté por encima del input */
+    transition: all 0.3s ease;
+}
+
+.close-search:hover {
+    transform: translateY(-50%) rotate(90deg) scale(1.1);
+    color: var(--color-acento);
+}
+
+/* ---- LÓGICA DE VISUALIZACIÓN ---- */
+
+/* Ocultar elementos del header cuando la búsqueda está activa */
+.header.search-active .menu,
+.header.search-active .login-item,
+.header.search-active .search-toggle-btn {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+/* Mantener el logo visible sobre la barra de búsqueda */
+.header.search-active .brand-container {
+    position: relative; /* Necesario para que z-index funcione */
+    z-index: 1002; /* Por encima de la barra de búsqueda (.search-container) */
+    opacity: 1; /* Asegurarse de que sea visible */
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Tienda de Artículos Deportivos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styles.css"> <!-- Estilos base, header, footer -->
+  <link rel="stylesheet" href="../css/productos.css"> <!-- Estilos para la cuadrícula de productos y filtros -->
+  <link rel="stylesheet" href="../css/carrito.css"> <!-- Estilos para el panel del carrito -->
+  <link rel="stylesheet" href="../css/destacado.css"> <!-- Para la sección de promoción -->
+  <link rel="stylesheet" href="../css/search.css"> <!-- Estilos para la barra de búsqueda -->
+  <link rel="stylesheet" href="../css/animations.css"> <!-- ESTILOS PARA ANIMACIONES GLOBALES -->
+  <link rel="stylesheet" href="../css/utilidades.css"> <!-- Para botones -->
+  <link rel="stylesheet" href="../css/responsive.css"> <!-- Media queries -->
+  <link rel="stylesheet" href="../css/articulos.css"> <!-- Estilos específicos existentes -->
+  <script src="../js/carrito.js" defer></script>
+</head>
+
+<body class="grid-container">
+  <header class="header fixed-top">
+    <div class="container">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <span class="hamburger"></span>
+      </button>
+      <div class="brand-container">
+        <img class="logo" src="../imagenes/logo.png" alt="Sports & Defense Logo" />
+        <h1>Sports &amp; Defense</h1>
+      </div>
+      <nav class="menu" id="menu">
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="academias.html">Academias</a></li>
+          <li><a href="articulos.html">Artículos</a></li>
+          <li><a href="defensa-personal.html">Defensa Personal</a></li>
+          <li><a href="contactos.html">Contacto</a></li>
+          <li><a href="imc.html">Calculadora IMC</a></li>
+          <li class="login-item"><a href="login.html" class="boton-login">Iniciar Sesión</a></li>
+        </ul>
+      </nav>
+      <div class="search-wrapper">
+        <a href="#search-container" class="search-toggle-btn" id="search-toggle-btn" aria-label="Abrir buscador">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-container" id="search-container">
+    <a href="#" class="close-search" id="close-search" aria-label="Cerrar buscador">&times;</a>
+    <form class="search-form" id="search-form">
+      <input class="search-input" id="searchInput" placeholder="Buscar en el sitio...">
+      <button class="search-button" type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+        </svg>
+      </button>
+    </form>
+  </div>
+  <div id="panel-carrito" class="panel-carrito">
+    <div class="panel-carrito-header">
+      <h3>Tu Carrito</h3>
+      <button id="cerrar-carrito">✕</button>
+    </div>
+    <div id="items-carrito" class="items-carrito"></div>
+    <div class="carrito-footer">
+      <div class="total-carrito">
+        <span>Total:</span>
+        <span id="total-precio"> 0.00</span>
+      </div>
+      <button id="vaciar-carrito" class="boton-secundario">Vaciar</button>
+      <button id="finalizar-compra" class="boton-primario">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay"></div>
+
+  <main class="main">
+    <div class="carrito-container">
+      <button id="carrito-btn" class="carrito-btn">
+        🛒 <span id="contador-carrito">0</span>
+      </button>
+    </div>
+
+    <h1>Tienda de Artículos Deportivos</h1>
+
+    <section class="filtros">
+      <h2>Filtrar por categoría</h2>
+      <div class="botones-filtro">
+        <button class="boton-filtro activo" data-categoria="todos">Todos</button>
+        <button class="boton-filtro" data-categoria="basquetbol">Básquetbol</button>
+        <button class="boton-filtro" data-categoria="defensa">Defensa Personal</button>
+        <button class="boton-filtro" data-categoria="fitness">Fitness</button>
+      </div>
+    </section>
+
+    <section id="productos" class="grid-productos">
+            <!-- Categoría: Básquetbol -->
+            <div class="producto" data-categoria="basquetbol">
+                <img src="../imagenes/articulo_basquet.jpg" alt="Balón de Básquetbol Profesional">
+                <h3>Balón de Básquetbol Profesional</h3>
+                <p class="descripcion">Balón oficial tamaño 7, ideal para competencias y entrenamientos intensivos.</p>
+                <p class="precio">45.99</p>
+                <button class="agregar-carrito" data-id="1" data-nombre="Balón de Básquetbol Profesional"
+                    data-precio="45.99">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto" data-categoria="basquetbol">
+                <img src="../imagenes/camiseta.jpeg" alt="Camiseta de Básquetbol">
+                <h3>Camiseta de Básquetbol</h3>
+                <p class="descripcion">Camiseta transpirable con tecnología anti-sudor, disponible en varios tamaños.
+                </p>
+                <p class="precio">29.99</p>
+                <button class="agregar-carrito" data-id="2" data-nombre="Camiseta de Básquetbol"
+                    data-precio="29.99">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto" data-categoria="basquetbol">
+                <img src="../imagenes/zapatillas1.jpeg" alt="Zapatillas de Básquetbol">
+                <h3>Zapatillas Deportivas</h3>
+                <p class="descripcion">Zapatillas con suela antideslizante y soporte para tobillos, ideales para
+                    rendimiento óptimo.</p>
+                <p class="precio">89.99</p>
+                <button class="agregar-carrito" data-id="3" data-nombre="Zapatillas de Básquetbol"
+                    data-precio="89.99">Agregar al Carrito</button>
+            </div>
+
+            <!-- Categoría: Defensa Personal -->
+            <div class="producto" data-categoria="defensa">
+                <img src="../imagenes/guantes.avif" alt="Guantes de Entrenamiento">
+                <h3>Guantes de Entrenamiento</h3>
+                <p class="descripcion">Guantes acolchados para protección de nudillos durante el entrenamiento de
+                    defensa personal.</p>
+                <p class="precio">34.99</p>
+                <button class="agregar-carrito" data-id="4" data-nombre="Guantes de Entrenamiento"
+                    data-precio="34.99">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto" data-categoria="defensa">
+                <img src="../imagenes/protector1.jpeg" alt="Protector de Cabeza">
+                <h3>Protector de Cabeza</h3>
+                <p class="descripcion">Casco protector acolchado para entrenamiento seguro de artes marciales y defensa
+                    personal.</p>
+                <p class="precio">42.50</p>
+                <button class="agregar-carrito" data-id="5" data-nombre="Protector de Cabeza"
+                    data-precio="42.50">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto" data-categoria="defensa">
+                <img src="../imagenes/vendas1.jpg" alt="Vendas para Manos">
+                <h3>Vendas para Manos</h3>
+                <p class="descripcion">Vendas elásticas de alta calidad para protección de muñecas y nudillos.</p>
+                <p class="precio">12.99</p>
+                <button class="agregar-carrito" data-id="6" data-nombre="Vendas para Manos" data-precio="12.99">Agregar
+                    al Carrito</button>
+            </div>
+
+            <!-- Categoría: Fitness -->
+            <div class="producto" data-categoria="fitness">
+                <img src="../imagenes/aerobics.jpg" alt="Colchoneta de Yoga">
+                <h3>Colchoneta de Yoga</h3>
+                <p class="descripcion">Colchoneta antideslizante de 6mm de grosor, perfecta para yoga y pilates.</p>
+                <p class="precio">25.99</p>
+                <button class="agregar-carrito" data-id="7" data-nombre="Colchoneta de Yoga" data-precio="25.99">Agregar
+                    al Carrito</button>
+            </div>
+
+            <div class="producto" data-categoria="fitness">
+                <img src="../imagenes/bandas1.jpeg" alt="Set de Bandas Elásticas">
+                <h3>Set de Bandas Elásticas</h3>
+                <p class="descripcion">Conjunto de 5 bandas elásticas de diferentes resistencias para entrenamiento
+                    completo.</p>
+                <p class="precio">19.99</p>
+                <button class="agregar-carrito" data-id="8" data-nombre="Set de Bandas Elásticas"
+                    data-precio="19.99">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto" data-categoria="fitness">
+                <img src="../imagenes/pesas.avif" alt="Pesas 5kg (Par)">
+                <h3>Pesas 5kg (Par)</h3>
+                <p class="descripcion">Par de pesas de 5kg con agarre ergonómico, ideales para tonificación muscular.
+                </p>
+                <p class="precio">39.99</p>
+                <button class="agregar-carrito" data-id="9" data-nombre="Pesas 5kg (Par)" data-precio="39.99">Agregar al
+                    Carrito</button>
+            </div>
+        </section>
+
+    <section class="promocion">
+      <h2>Video promocional de nuestros productos</h2>
+      <video controls width="100%" autoplay muted>
+        <source src="../videos/articulos.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+    </section>
+
+    <section class="contacto-compras">
+      <h2>¿Necesitas ayuda con tu compra?</h2>
+      <p>Nuestro equipo está disponible para asesorarte en tu selección de productos.</p>
+      <p>Escríbenos a <a href="mailto:ventas@multidisciplinaria.com">ventas@multidisciplinaria.com</a> o llama al 987-654-321.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Navegación</h3>
+        <ul class="footer-links">
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="academias.html">Academias</a></li>
+          <li><a href="articulos.html">Artículos</a></li>
+          <li><a href="defensa-personal.html">Defensa Personal</a></li>
+          <li><a href="contactos.html">Contacto</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="politica-privacidad.html">Políticas y Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <address>
+          <p><i class="icono-contacto">📍</i> Av. Deportiva 123, Arequipa, Perú</p>
+          <p><i class="icono-contacto">📞</i> (054) 987-987-987</p>
+          <p><i class="icono-contacto">✉️</i> info@sportsdefense.com</p>
+        </address>
+      </div>
+      <div class="footer-section">
+        <h3>Horarios</h3>
+        <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
+        <p>Sábados: 9:00 am - 2:00 pm</p>
+        <p>Domingos: Cerrado</p>
+      </div>
+      <div class="footer-section redes-sociales">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Facebook" src="../imagenes/facebook.png" width="32" /> Facebook
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Instagram" src="../imagenes/instagram.png" width="32" /> Instagram
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <img alt="YouTube" src="../imagenes/youtube.png" width="32" /> YouTube
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Twitter" src="../imagenes/twitter.png" width="32" /> Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Sports & Defense. Todos los derechos reservados.</p>
+      <p class="footer-legal">
+        <a href="politica-privacidad.html">Política de Privacidad</a> |
+        <a href="#">Términos de Servicio</a> |
+        <a href="#">Mapa del Sitio</a>
+      </p>
+    </div>
+  </footer>
+  <script>
+    function setupHeader() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
+      const header = document.querySelector('.header');
+      const searchToggleBtn = document.getElementById('search-toggle-btn');
+      const searchContainer = document.getElementById('search-container');
+      const closeSearch = document.getElementById('close-search');
+      const searchForm = document.getElementById('search-form');
+      const searchInput = document.getElementById('searchInput');
+      if (menuToggle && menu) {
+        menuToggle.addEventListener('click', () => {
+          menu.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+      }
+      if (searchToggleBtn && searchContainer && closeSearch && header) {
+        searchToggleBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          searchContainer.classList.add('active');
+          header.classList.add('search-active');
+          if (searchInput) searchInput.focus();
+        });
+        closeSearch.addEventListener('click', (e) => {
+          e.preventDefault();
+          searchContainer.classList.remove('active');
+          header.classList.remove('search-active');
+        });
+      }
+      if (searchForm && searchInput) {
+        searchForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const valor = searchInput.value.toLowerCase().trim();
+          const rutas = { "inicio": "../../index.html", "academias": "academias.html", "artículos": "articulos.html", "articulos": "articulos.html", "defensa personal": "defensa-personal.html", "contacto": "contactos.html", "nosotros": "nosotros.html", "politicas y privacidad": "politica-privacidad.html", "calculadora imc": "imc.html" };
+          const url = rutas[valor];
+          if (url) { window.location.href = url; } else { alert("Página no encontrada. Intenta con un nombre válido del menú."); }
+        });
+      }
+      const handleScroll = () => {
+        if (header) { header.classList.toggle('scrolled', window.scrollY > 50); }
+      };
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+      document.addEventListener('click', (event) => {
+        if (menu && menu.classList.contains('active') && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
+          menu.classList.remove('active');
+          menuToggle.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      setupHeader();
+    });
+  </script>
+</body>
+
+</html>

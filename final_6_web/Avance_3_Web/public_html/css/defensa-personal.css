@@ -1,0 +1,292 @@
+/* Estilos para la página de Defensa Personal */
+
+/* Secciones principales */
+.intro-section, .benefits-section, .courses-section,
+.testimonials-section, .faq-section, .cta-section,
+.video-section, .stats-section {
+  padding: 3rem 1rem;
+}
+
+.intro-content p, .course-info p, .testimonial-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Rejilla de beneficios */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.benefit-card {
+  background-color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: var(--borde-radio);
+  box-shadow: var(--sombra-suave);
+  transition: all 0.3s ease;
+}
+
+.benefit-card i {
+  font-size: 2.5rem;
+  color: var(--color-principal-tema);
+  margin-bottom: 1rem;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-media);
+}
+
+/* Estadísticas */
+.stats-section {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: var(--borde-radio);
+    margin: 2rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: var(--borde-radio);
+    backdrop-filter: blur(5px);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Cursos */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.course-card {
+  background-color: white;
+  border-radius: var(--borde-radio);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.course-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-info h3 {
+    margin-bottom: 1rem;
+}
+
+.course-info p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.course-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.course-info ul li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.course-info ul li::before {
+    content: '✓';
+    color: var(--color-exito);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Testimonios */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background-color: var(--color-fondo);
+    padding: 2rem;
+    border-radius: var(--borde-radio);
+    position: relative;
+}
+
+.testimonial-card .quote {
+    font-size: 2rem;
+    color: var(--color-principal-tema);
+    opacity: 0.2;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.testimonial-card p {
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.testimonial-card .author {
+    font-weight: bold;
+    text-align: right;
+    color: var(--color-primario);
+}
+
+.testimonial-card .rating {
+    text-align: right;
+    color: var(--color-acento);
+    margin-top: 0.5rem;
+}
+
+/* FAQ */
+.faq-section {
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 1rem;
+}
+
+.faq-question {
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    margin-top: 1rem;
+}
+
+.faq-item .faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* CTA */
+.cta-section {
+    background: var(--gradiente);
+    color: white;
+    padding: 3rem;
+    text-align: center;
+    border-radius: var(--borde-radio);
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+    background-color: white;
+    color: var(--color-principal-tema);
+}
+
+.cta-btn.secondary {
+    background-color: transparent;
+    color: white;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-media);
+}
+
+.cta-btn.secondary:hover {
+    background-color: white;
+    color: var(--color-principal-tema);
+}
+
+/* Video */
+.video-container {
+    border-radius: var(--borde-radio);
+    overflow: hidden;
+    box-shadow: var(--sombra-media);
+    margin: 2rem auto;
+    max-width: 900px;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+.video-caption {
+    padding: 1rem;
+    background-color: var(--color-fondo);
+    text-align: center;
+    font-style: italic;
+    color: var(--color-texto-claro);
+}
+
+/* Efectos de scroll */
+.scroll-effect {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-effect.active {
+    opacity: 1;
+    transform: translateY(0);
+}

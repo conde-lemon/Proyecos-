@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Defensa Personal | Sports & Defense</title>
+  <link rel="stylesheet" href="../css/styles.css"> <!-- Estilos base, header, footer -->
+  <link rel="stylesheet" href="../css/defensa-personal.css"> <!-- Estilos para esta página -->
+  <link rel="stylesheet" href="../css/search.css"> <!-- Estilos para la barra de búsqueda -->
+  <link rel="stylesheet" href="../css/animations.css"> <!-- ESTILOS PARA ANIMACIONES GLOBALES -->
+  <link rel="stylesheet" href="../css/utilidades.css"> <!-- Para botones genéricos -->
+  <link rel="stylesheet" href="../css/responsive.css"> <!-- Media queries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+</head>
+
+<body class="grid-container">
+  <header class="header fixed-top">
+    <div class="container">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <span class="hamburger"></span>
+      </button>
+      <div class="brand-container">
+        <img class="logo" src="../imagenes/logo.png" alt="Sports & Defense Logo" />
+        <h1>Sports &amp; Defense</h1>
+      </div>
+      <nav class="menu" id="menu">
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="academias.html">Academias</a></li>
+          <li><a href="articulos.html">Artículos</a></li>
+          <li><a href="defensa-personal.html">Defensa Personal</a></li>
+          <li><a href="contactos.html">Contacto</a></li>
+          <li><a href="imc.html">Calculadora IMC</a></li>
+          <li class="login-item"><a href="login.html" class="boton-login">Iniciar Sesión</a></li>
+        </ul>
+      </nav>
+      <div class="search-wrapper">
+        <a href="#search-container" class="search-toggle-btn" id="search-toggle-btn" aria-label="Abrir buscador">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="search-container" id="search-container">
+    <a href="#" class="close-search" id="close-search" aria-label="Cerrar buscador">&times;</a>
+    <form class="search-form" id="search-form">
+      <input class="search-input" id="searchInput" placeholder="Buscar en el sitio...">
+      <button class="search-button" type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <!-- Cuerpo Principal -->
+  <main class="main">
+    <section class="intro-section">
+      <h1 class="gradiente">Defensa Personal para Todos</h1>
+      <div class="intro-content scroll-effect">
+        <p>
+          En <strong>Sports & Defense</strong>, nuestra misión es empoderar a las personas con herramientas prácticas de defensa personal.
+          Nuestros cursos están diseñados para mejorar tu confianza, aumentar tu seguridad y prepararte para enfrentar
+          situaciones reales de forma efectiva.
+        </p>
+        <p>
+          Con instructores altamente calificados y una metodología accesible, nuestras clases están abiertas a jóvenes,
+          adultos y personas mayores, sin necesidad de experiencia previa. Aprende técnicas de evasión, bloqueo, escapes,
+          control y reacción ante amenazas.
+        </p>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="benefits-section">
+      <h2 class="scroll-effect">¿Por qué aprender defensa personal con nosotros?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card scroll-effect">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Técnicas efectivas</h3>
+          <p>Métodos probados en situaciones reales, adaptables a cualquier físico o condición. Basados en Krav Maga, Jiu-Jitsu y técnicas policiales.</p>
+        </div>
+        <div class="benefit-card scroll-effect right">
+          <i class="fas fa-user-tie"></i>
+          <h3>Instructores certificados</h3>
+          <p>Profesionales con amplia experiencia en artes marciales y seguridad personal. Más del 80% son ex fuerzas de seguridad o atletas profesionales.</p>
+        </div>
+        <div class="benefit-card scroll-effect">
+          <i class="fas fa-users"></i>
+          <h3>Ambiente seguro</h3>
+          <p>Espacio controlado donde practicar sin riesgos, con equipamiento de protección de última generación y protocolos de seguridad estrictos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card scroll-effect">
+          <div class="stat-number">15+</div>
+          <div class="stat-title">Años de experiencia</div>
+        </div>
+        <div class="stat-card scroll-effect right">
+          <div class="stat-number">5000+</div>
+          <div class="stat-title">Estudiantes formados</div>
+        </div>
+        <div class="stat-card scroll-effect">
+          <div class="stat-number">98%</div>
+          <div class="stat-title">Satisfacción</div>
+        </div>
+        <div class="stat-card scroll-effect right">
+          <div class="stat-number">24</div>
+          <div class="stat-title">Ubicaciones</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cursos Destacados -->
+    <section class="courses-section">
+      <h2 class="section-title scroll-effect">Nuestros Cursos Destacados</h2>
+      <div class="courses-grid">
+        <div class="course-card scroll-effect">
+          <img src="../imagenes/jiu-jitsu.jpg" alt="Clase de Jiu-Jitsu" />
+          <div class="course-info">
+            <h3>Jiu-Jitsu Brasileño</h3>
+            <p>Técnicas de suelo y sumisión para defensa personal. Ideal para aprender a defenderse contra oponentes más grandes usando palancas y técnica.</p>
+            <ul>
+              <li>Duración: 12 semanas</li>
+              <li>Niveles: Principiante a avanzado</li>
+              <li>Edad mínima: 14 años</li>
+            </ul>
+            <a href="#" class="btn">Más información</a>
+          </div>
+        </div>
+        <div class="course-card scroll-effect right">
+          <img src="../imagenes/KravMaga.jpg" alt="Entrenamiento de Krav Maga" />
+          <div class="course-info">
+            <h3>Krav Maga</h3>
+            <p>Sistema de combate militar israelí adaptado a civiles. Enfocado en neutralizar amenazas rápidamente y escapar de situaciones peligrosas.</p>
+            <ul>
+              <li>Duración: 8 semanas</li>
+              <li>Incluye defensa contra armas</li>
+              <li>Enfoque en escenarios reales</li>
+            </ul>
+            <a href="#" class="btn">Más información</a>
+          </div>
+        </div>
+        <div class="course-card scroll-effect">
+          <img src="../imagenes/defensa-mujeres.jpg" alt="Defensa para mujeres" />
+          <div class="course-info">
+            <h3>Defensa para Mujeres</h3>
+            <p>Técnicas específicas para situaciones de riesgo comunes como agarres, arrinconamientos y ataques múltiples.</p>
+            <ul>
+              <li>Enfoque en prevención</li>
+              <li>Técnicas adaptadas a la fuerza física</li>
+              <li>Simulaciones realistas</li>
+            </ul>
+            <a href="#" class="btn">Más información</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonials-section">
+      <h2 class="scroll-effect">Lo que dicen nuestros estudiantes</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card scroll-effect">
+          <div class="quote"><i class="fas fa-quote-left"></i></div>
+          <p>"Las clases cambiaron mi perspectiva sobre la seguridad personal. Ahora me siento mucho más confiada al caminar por la calle. Lo que aprendí en una situación real me ayudó a escapar de un intento de robo."</p>
+          <div class="author">- María G., 28 años</div>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-card scroll-effect right">
+          <div class="quote"><i class="fas fa-quote-left"></i></div>
+          <p>"Los instructores son excelentes, explican cada técnica con paciencia y siempre priorizan la seguridad. En solo 3 meses he ganado una confianza que no tenía en 20 años."</p>
+          <div class="author">- Carlos M., 42 años</div>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        <div class="testimonial-card scroll-effect">
+          <div class="quote"><i class="fas fa-quote-left"></i></div>
+          <p>"Como persona mayor, pensé que no podría aprender, pero las técnicas adaptadas a mi condición física han sido reveladoras. Ahora mis hijos están más tranquilos cuando salgo sola."</p>
+          <div class="author">- Rosa P., 65 años</div>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2 class="scroll-effect">Preguntas Frecuentes</h2>
+      
+      <div class="faq-item scroll-effect">
+        <div class="faq-question">
+          <span>¿Necesito estar en forma para comenzar?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>No es necesario. Nuestros cursos están diseñados para adaptarse a todos los niveles de condición física. Los instructores modifican los ejercicios según las capacidades de cada estudiante.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item scroll-effect right">
+        <div class="faq-question">
+          <span>¿Qué debo llevar a la primera clase?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Ropa deportiva cómoda, una botella de agua y calzado deportivo limpio. Todo el equipo de protección lo proporcionamos nosotros para las clases de prueba.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item scroll-effect">
+        <div class="faq-question">
+          <span>¿Es peligroso practicar defensa personal?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Nuestras clases siguen estrictos protocolos de seguridad. Las técnicas se aprenden progresivamente y siempre con supervisión profesional. La tasa de lesiones es extremadamente baja.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item scroll-effect right">
+        <div class="faq-question">
+          <span>¿Pueden asistir personas con discapacidades?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Sí, ofrecemos clases adaptadas. Contáctenos para discutir necesidades específicas y diseñar un plan de entrenamiento adecuado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section scroll-effect">
+      <div class="cta-content">
+        <h2>¡Empieza tu entrenamiento hoy!</h2>
+        <p>Primera clase de prueba gratuita para todos los nuevos estudiantes. Sin compromisos, sin tarjetas de crédito requeridas.</p>
+        <div class="cta-buttons">
+          <a href="academias.html" class="cta-btn">Ver horarios</a>
+          <a href="contactos.html" class="cta-btn secondary">Contactar instructor</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section class="video-section">
+      <h2 class="scroll-effect">Mira nuestro entrenamiento en acción</h2>
+      <div class="video-container scroll-effect right">
+        <video controls poster="../imagenes/video-poster.jpg" autoplay muted>
+          <source src="../videos/defensapersonal.mp4" type="video/mp4"/>
+          Tu navegador no soporta el video.
+        </video>
+        <p class="video-caption">Demostración de técnicas básicas de Krav Maga en nuestro gimnasio principal</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Navegación</h3>
+        <ul class="footer-links">
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="academias.html">Academias</a></li>
+          <li><a href="articulos.html">Artículos</a></li>
+          <li><a href="defensa-personal.html">Defensa Personal</a></li>
+          <li><a href="contactos.html">Contacto</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="politica-privacidad.html">Políticas y Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <address>
+          <p><i class="icono-contacto">📍</i> Av. Deportiva 123, Arequipa, Perú</p>
+          <p><i class="icono-contacto">📞</i> (054) 987-987-987</p>
+          <p><i class="icono-contacto">✉️</i> info@sportsdefense.com</p>
+        </address>
+      </div>
+      <div class="footer-section">
+        <h3>Horarios</h3>
+        <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
+        <p>Sábados: 9:00 am - 2:00 pm</p>
+        <p>Domingos: Cerrado</p>
+      </div>
+      <div class="footer-section redes-sociales">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Facebook" src="../imagenes/facebook.png" width="32" /> Facebook
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Instagram" src="../imagenes/instagram.png" width="32" /> Instagram
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <img alt="YouTube" src="../imagenes/youtube.png" width="32" /> YouTube
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <img alt="Twitter" src="../imagenes/twitter.png" width="32" /> Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Sports & Defense. Todos los derechos reservados.</p>
+      <p class="footer-legal">
+        <a href="politica-privacidad.html">Política de Privacidad</a> |
+        <a href="#">Términos de Servicio</a> |
+        <a href="#">Mapa del Sitio</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function setupHeader() { const menuToggle = document.getElementById('menu-toggle'); const menu = document.getElementById('menu'); const header = document.querySelector('.header'); const searchToggleBtn = document.getElementById('search-toggle-btn'); const searchContainer = document.getElementById('search-container'); const closeSearch = document.getElementById('close-search'); const searchForm = document.getElementById('search-form'); const searchInput = document.getElementById('searchInput'); if (menuToggle && menu) { menuToggle.addEventListener('click', () => { menu.classList.toggle('active'); menuToggle.classList.toggle('active'); document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto'; }); } if (searchToggleBtn && searchContainer && closeSearch && header) { searchToggleBtn.addEventListener('click', (e) => { e.preventDefault(); searchContainer.classList.add('active'); header.classList.add('search-active'); if (searchInput) searchInput.focus(); }); closeSearch.addEventListener('click', (e) => { e.preventDefault(); searchContainer.classList.remove('active'); header.classList.remove('search-active'); }); } if (searchForm && searchInput) { searchForm.addEventListener('submit', (event) => { event.preventDefault(); const valor = searchInput.value.toLowerCase().trim(); const rutas = { "inicio": "../../index.html", "academias": "academias.html", "artículos": "articulos.html", "articulos": "articulos.html", "defensa personal": "defensa-personal.html", "contacto": "contactos.html", "nosotros": "nosotros.html", "politicas y privacidad": "politica-privacidad.html", "calculadora imc": "imc.html" }; const url = rutas[valor]; if (url) { window.location.href = url; } else { alert("Página no encontrada. Intenta con un nombre válido del menú."); } }); } const handleScroll = () => { if (header) { header.classList.toggle('scrolled', window.scrollY > 50); } }; window.addEventListener('scroll', handleScroll); handleScroll(); document.addEventListener('click', (event) => { if (menu && menu.classList.contains('active') && !menu.contains(event.target) && !menuToggle.contains(event.target)) { menu.classList.remove('active'); menuToggle.classList.remove('active'); document.body.style.overflow = 'auto'; } }); }
+
+    // Efectos de aparición al hacer scroll
+    document.addEventListener("DOMContentLoaded", function() {
+      // Configuración del Header
+      setupHeader();
+
+      // Lógica de la página de Defensa Personal
+      const scrollElements = document.querySelectorAll('.scroll-effect');
+      
+      const elementInView = (el) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+          elementTop <= (window.innerHeight || document.documentElement.clientHeight) - 100
+        );
+      };
+      
+      const displayScrollElement = (element) => {
+        element.classList.add('active');
+      };
+      
+      const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+          if (elementInView(el)) {
+            displayScrollElement(el);
+          }
+        });
+      };
+      
+      // Mostrar elementos visibles al cargar
+      scrollElements.forEach((el) => {
+        if (elementInView(el)) {
+          displayScrollElement(el);
+        }
+      });
+      
+      window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+      });
+    });
+    
+    // FAQ functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentNode;
+        item.classList.toggle('active');
+        
+        const icon = question.querySelector('i');
+        if (item.classList.contains('active')) {
+          icon.classList.remove('fa-chevron-down');
+          icon.classList.add('fa-chevron-up');
+        } else {
+          icon.classList.remove('fa-chevron-up');
+          icon.classList.add('fa-chevron-down');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

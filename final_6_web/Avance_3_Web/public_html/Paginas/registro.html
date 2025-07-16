@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Sports &amp; Defense</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Estilos base, header, footer -->
+    <link rel="stylesheet" href="../css/search.css"> <!-- Estilos para la barra de búsqueda -->
+    <link rel="stylesheet" href="../css/animations.css"> <!-- ESTILOS PARA ANIMACIONES GLOBALES -->
+    <link rel="stylesheet" href="../css/login.css"> <!-- Reutilizamos estilos del login -->
+    <link rel="stylesheet" href="../css/utilidades.css"> <!-- Para botones y formularios -->
+    <link rel="stylesheet" href="../css/responsive.css"> <!-- Media queries -->
+</head>
+<body class="grid-container">
+    <header class="header fixed-top">
+        <div class="container">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+            <div class="brand-container">
+                <img class="logo" src="../imagenes/logo.png" alt="Sports & Defense Logo" />
+                <h1>Sports &amp; Defense</h1>
+            </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="academias.html">Academias</a></li>
+                    <li><a href="articulos.html">Artículos</a></li>
+                    <li><a href="defensa-personal.html">Defensa Personal</a></li>
+                    <li><a href="contactos.html">Contacto</a></li>
+                    <li><a href="imc.html">Calculadora IMC</a></li>
+                    <li class="login-item"><a href="login.html" class="boton-login">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+            <div class="search-wrapper">
+                <a href="#search-container" class="search-toggle-btn" id="search-toggle-btn"
+                    aria-label="Abrir buscador">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="search-container" id="search-container">
+        <a href="#" class="close-search" id="close-search" aria-label="Cerrar buscador">&times;</a>
+        <form class="search-form" id="search-form">
+            <input class="search-input" id="searchInput" placeholder="Buscar en el sitio...">
+            <button class="search-button" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <main class="main login-main">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Crear Cuenta</h1>
+                <p>Regístrate para acceder a todos nuestros servicios</p>
+            </div>
+            
+            <form class="login-form" id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                    <small class="password-hint">Mínimo 8 caracteres, incluir mayúsculas y números</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Contraseña</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required placeholder="••••••••">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono (Opcional)</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+51 123 456 789">
+                </div>
+                
+                <div class="form-checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Acepto los <a href="terminos.html" target="_blank">Términos y Condiciones</a> y la <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a></label>
+                </div>
+                
+                <button type="submit" class="boton-primario">Registrarse</button>
+                
+                <div class="login-footer">
+                    <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul class="footer-links">
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="academias.html">Academias</a></li>
+                    <li><a href="articulos.html">Artículos</a></li>
+                    <li><a href="defensa-personal.html">Defensa Personal</a></li>
+                    <li><a href="contactos.html">Contacto</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="politica-privacidad.html">Políticas y Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <address>
+                    <p><i class="icono-contacto">📍</i> Av. Deportiva 123, Arequipa, Perú</p>
+                    <p><i class="icono-contacto">📞</i> (054) 987-987-987</p>
+                    <p><i class="icono-contacto">✉️</i> info@sportsdefense.com</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
+                <p>Sábados: 9:00 am - 2:00 pm</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+            <div class="footer-section redes-sociales">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="Facebook" src="../imagenes/facebook.png" width="32" /> Facebook
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="Instagram" src="../imagenes/instagram.png" width="32" /> Instagram
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="YouTube" src="../imagenes/youtube.png" width="32" /> YouTube
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                        <img alt="Twitter" src="../imagenes/twitter.png" width="32" /> Twitter
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Sports & Defense. Todos los derechos reservados.</p>
+            <p class="footer-legal">
+                <a href="politica-privacidad.html">Política de Privacidad</a> |
+                <a href="#">Términos de Servicio</a> |
+                <a href="#">Mapa del Sitio</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function setupHeader() { const menuToggle = document.getElementById('menu-toggle'); const menu = document.getElementById('menu'); const header = document.querySelector('.header'); const searchToggleBtn = document.getElementById('search-toggle-btn'); const searchContainer = document.getElementById('search-container'); const closeSearch = document.getElementById('close-search'); const searchForm = document.getElementById('search-form'); const searchInput = document.getElementById('searchInput'); if (menuToggle && menu) { menuToggle.addEventListener('click', () => { menu.classList.toggle('active'); menuToggle.classList.toggle('active'); document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto'; }); } if (searchToggleBtn && searchContainer && closeSearch && header) { searchToggleBtn.addEventListener('click', (e) => { e.preventDefault(); searchContainer.classList.add('active'); header.classList.add('search-active'); if (searchInput) searchInput.focus(); }); closeSearch.addEventListener('click', (e) => { e.preventDefault(); searchContainer.classList.remove('active'); header.classList.remove('search-active'); }); } if (searchForm && searchInput) { searchForm.addEventListener('submit', (event) => { event.preventDefault(); const valor = searchInput.value.toLowerCase().trim(); const rutas = { "inicio": "../../index.html", "academias": "academias.html", "artículos": "articulos.html", "articulos": "articulos.html", "defensa personal": "defensa-personal.html", "contacto": "contactos.html", "nosotros": "nosotros.html", "politicas y privacidad": "politica-privacidad.html", "calculadora imc": "imc.html" }; const url = rutas[valor]; if (url) { window.location.href = url; } else { alert("Página no encontrada. Intenta con un nombre válido del menú."); } }); } const handleScroll = () => { if (header) { header.classList.toggle('scrolled', window.scrollY > 50); } }; window.addEventListener('scroll', handleScroll); handleScroll(); document.addEventListener('click', (event) => { if (menu && menu.classList.contains('active') && !menu.contains(event.target) && !menuToggle.contains(event.target)) { menu.classList.remove('active'); menuToggle.classList.remove('active'); document.body.style.overflow = 'auto'; } }); }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            setupHeader();
+        });
+    </script>
+    <script src="../js/registro.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+/* ========== ESTILOS BASE ========== */
+.imc-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.imc-calculadora {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.imc-form, .imc-resultado {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--borde-radio);
+  box-shadow: var(--sombra-suave);
+}
+
+.imc-graficos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.grafico-container {
+  flex: 2;
+  min-width: 300px;
+  background: white;
+  padding: 1rem;
+  border-radius: var(--borde-radio);
+  box-shadow: var(--sombra-suave);
+}
+
+.imc-estadisticas {
+  flex: 1;
+  min-width: 250px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.estadistica-card {
+  background: white;
+  padding: 1rem;
+  border-radius: var(--borde-radio);
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.estadistica-icon {
+  font-size: 1.5rem;
+}
+
+.estadistica-valor {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-primario);
+}
+
+.imc-tabla {
+  margin-bottom: 2rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: var(--sombra-suave);
+  border-radius: var(--borde-radio);
+  overflow: hidden;
+}
+
+.tabla th, .tabla td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: var(--borde-fino);
+}
+
+.tabla th {
+  background-color: var(--color-primario);
+  color: white;
+}
+
+.tabla tr:nth-child(even) {
+  background-color: var(--color-gris-claro);
+}
+
+.imc-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--borde-radio);
+  box-shadow: var(--sombra-suave);
+}
+
+/* ========== RESPONSIVIDAD ========== */
+@media (max-width: 768px) {
+  .imc-form, .imc-resultado {
+    flex: 1 1 100%;
+  }
+  
+  .grafico-container, .imc-estadisticas {
+    flex: 1 1 100%;
+  }
+  
+  .imc-estadisticas {
+    grid-template-columns: 1fr;
+  }
+  
+  .tabla {
+    font-size: 0.9rem;
+  }
+  
+  .tabla th, .tabla td {
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .imc-form {
+    padding: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 0.6rem;
+  }
+  
+  #calcular-btn {
+    width: 100%;
+    padding: 0.8rem;
+  }
+  
+  .imc-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-card {
+    padding: 1rem;
+  }
+}
